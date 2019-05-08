@@ -26,7 +26,7 @@ def resnet(activation, optimizer, dropout=False, weight_decay=False):
 
 	#change the last layer to output 10 classes
 	num_feats = model.fc.in_features
-	model.fc  = nn.Linear(num_feats, n_clas=10)
+	model.fc  = nn.Linear(num_feats, 10)
 	print("Using model: \n", model)
 
 	#get the working directory where the data is saved
