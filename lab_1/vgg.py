@@ -29,7 +29,7 @@ def vgg(activation, optimizer, dropout=False, weight_decay=False):
 	# convert all the layers to list and remove the last one
 	features = list(model.classifier.children())[:-1]
 	## Add the last layer based on the num of classes in our dataset
-	features.extend([nn.Linear(num_ftrs, n_class=10)])
+	features.extend([nn.Linear(num_ftrs, 10)])
 	## convert it into container and add it to our model class.
 	model.classifier = nn.Sequential(*features)
 
