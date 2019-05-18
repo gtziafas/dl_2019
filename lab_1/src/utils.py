@@ -88,10 +88,6 @@ def train(network: torch.nn.Module,
 		train_loss = train_epoch(network=network, dataloader=trainloader, optimizer=optimizer, loss_fn=loss_fn, device=device)
 		test_loss = test_epoch(network=network, dataloader=testloader, loss_fn=loss_fn, device=device)
 
-		if (t+1) % 2 == 0:
-			l_rate /= 3
-			optimizer = torch.optim.Adam(network.parameters(), lr=l_rate)
-
 		print('\nEpoch {}'.format(t))
 		print('Training loss %.4f' % train_loss)
 		print('Validation loss %.4f' % test_loss)
